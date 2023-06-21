@@ -7,6 +7,7 @@ async function getTodosGroupedByColumn() {
   );
 
   const todos = data.documents;
+  console.log(todos);
 
   const columns = todos.reduce((acc, todo) => {
     if (!acc.get(todo.status)) {
@@ -26,5 +27,29 @@ async function getTodosGroupedByColumn() {
 
     return acc;
   }, new Map<TypeColumn, Column>());
+  console.log(columns);
+  // if columns doesnt have in progress, todo and done, add them with empty todos
+  const columnTypes: TypeColumn[] = ["todo", "inprogess", "done"];
+
+  for (const columnType of columnTypes) {
+    if (!columns.get(columnType)) {
+      columns.set(columnType, { id: columnType, todos: [] });
+    }
+  }
+
+  console.log(columns);
+
+  //sort columns by columnTypes
+  const sortedColumns = new Map(
+    Array.from(columns.entries()).sort(
+      (a, b) => columnTypes.indexOf(a[0]) - columnTypes.indexOf(b[0])
+    )
+  );
+
+  const board : Board = {
+    columns: sortedColumns
+  }
+
+  return board
 }
 export { getTodosGroupedByColumn };
