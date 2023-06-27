@@ -26,9 +26,7 @@ function Board() {
             ref={provided.innerRef}
           >
             {/**Rendering all columns */}
-            {Array.from(board.columns.entries()).map(([id, column], index) => (
-              <Column key={id} id={id} todos={column.todos} index={index} />
-            ))}
+            {Array.from(board.columns.entries()).}
           </div>
         )}
       </Droppable>

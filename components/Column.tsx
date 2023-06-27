@@ -1,3 +1,4 @@
+import { PlusCircleIcon } from "@heroicons/react/24/solid";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
 type Props = {
@@ -6,17 +7,13 @@ type Props = {
   index: number;
 };
 
-const idToColumnText : {
-[key in TypeColumn] :string
-
+const idToColumnText: {
+  [key in TypeColumn]: string;
 } = {
-
-todo: "To Do",
-inprogess: "Inprogress" ,
-done : "Done"
-
-}
-
+  todo: "To Do",
+  inprogess: "In progress",
+  done: "Done",
+};
 
 const Column = ({ id, todos, index }: Props) => {
   return (
@@ -36,7 +33,41 @@ const Column = ({ id, todos, index }: Props) => {
                   snapshot.isDraggingOver ? "bg-green-200" : "bg-white/50"
                 }`}
               >
-                <h2>{idToColumnText[id]}</h2>
+                <h2 className="flex justify-between font-bold text-xl p-2">
+                  {idToColumnText[id]}
+                  <span className="text-gray-500 bg-gray-200 rounded-full px-2 py-1 text-sm font-normal">
+                    {todos.length}
+                  </span>
+                </h2>
+
+                <div className="space-y-2">
+                     {todos.map([todo, index] => (
+
+                        <Draggable key={todo.$id} draggableId={todo.$id} index={index}>
+                             {(provided) => (
+                                <TodoCard
+                                todo={todo}
+                                index={index}
+                                id={id}
+                                
+                                 draggableProps=   {provided.draggableProps}
+                                  dragHandleProps =  {provided.dragHandleProps}
+                                    innerRef={provided.innerRef}
+                               / >
+                            
+                               
+             
+                            )}
+                        </Draggable>
+
+
+                     ) )}
+                     {provided.placeholder}
+
+                     <div><button><PlusCircleIcon
+                     className="h-10 w-10"
+                     /></button></div>
+                </div>
               </div>
             )}
           </Droppable>
