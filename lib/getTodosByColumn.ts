@@ -22,7 +22,7 @@ async function getTodosGroupedByColumn() {
       $createdAt: todo.$createdAt,
       title: todo.title,
       status: todo.status,
-      ...(todo.image && { Image: JSON.parse(todo.image) }),
+      //   ...(todo.image && { Image: JSON.parse(todo.image) }),
     });
 
     return acc;
@@ -45,11 +45,11 @@ async function getTodosGroupedByColumn() {
       (a, b) => columnTypes.indexOf(a[0]) - columnTypes.indexOf(b[0])
     )
   );
+  console.log(sortedColumns);
+  const board: Board = {
+    columns: sortedColumns,
+  };
 
-  const board : Board = {
-    columns: sortedColumns
-  }
-
-  return board
+  return board;
 }
 export { getTodosGroupedByColumn };
