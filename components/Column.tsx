@@ -30,7 +30,7 @@ const Column = ({ id, todos, index }: Props) => {
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                className={`p-2 rounded-2xl shadow-sm  ${
+                className={`p-2 rounded-2xl shadow-sm   ${
                   snapshot.isDraggingOver ? "bg-green-200" : "bg-white/50"
                 }`}
               >
