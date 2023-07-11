@@ -31,6 +31,7 @@ const useBoardStore = create<BoardState>((set,get) => ({
     const newColumns = new Map(get().board.columns);
 
     newColumns.get(id)?.todos.splice(taskIndex, 1);
+    set({board: {columns: newColumns}})
   },
 
   updateTodoInDatabase: async (todo, columnId) => {
