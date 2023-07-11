@@ -2,7 +2,7 @@ interface Board {
     columns: Map<TypeColumn, Column>
 }
 
-type TypeColumn = "todo" | "inprogess" | "done"
+type TypeColumn = "todo" | "inprogress" | "done"
 
 interface Column {
     id: TypeColumn
