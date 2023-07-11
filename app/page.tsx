@@ -1,20 +1,19 @@
-import Board from '@/components/Board'
-import HeaderButtom from '@/components/HeaderButtom'
-import HeaderTop from '@/components/HeaderTop'
+import Board from "@/components/Board";
+import HeaderButtom from "@/components/Summary";
+import HeaderTop from "@/components/Header";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main >
+    <main>
       {/*Header */}
-      
-      <HeaderTop/>
-      <HeaderButtom/>
 
-       {/*Header */}
-       <Board/>
-     <h1>Trello 2.0 Ai</h1>
+      <HeaderTop />
+
+      {/*Header */}
+      <Board />
+      <h1>Trello 2.0 Ai</h1>
     </main>
-  )
+  );
 }

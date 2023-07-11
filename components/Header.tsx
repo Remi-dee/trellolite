@@ -1,14 +1,40 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Avatar from "react-avatar";
-function HeaderTop() {
+import { useBoardStore } from "@/store/BoardStore";
+
+import Summary from "./Summary";
+import { fetchSuggestion } from "@/lib/gptService";
+function Header() {
+  const [board, searchString, setSearchString] = useBoardStore((state) => [
+    state.board,
+    state.searchString,
+    state.setSearchString,
+  ]);
+
+  const [loading, setLoading] = useState<boolean>(false);
+  const [suggestion, setSuggestion] = useState<string>("");
+
+  useEffect(() => {
+    if (board.columns.size === 0) return;
+    setLoading(true);
+
+    const fetchSuggestionFunc = async () => {
+      const suggestion = await fetchSuggestion(board);
+      setSuggestion(suggestion);
+      setLoading(false);
+    };
+
+    fetchSuggestionFunc();
+  }, [board]);
+
   return (
     <header>
       <div className="flex flex-col md:flex-row items-center p-5 bg-gray-500/10">
-       
-       <div className="absolute
+        <div
+          className="absolute
                         top-0
                         left-0
                         w-full
@@ -22,9 +48,9 @@ function HeaderTop() {
                         opacity-50
                         -z-50
 
-                        "/>
-       
-       
+                        "
+        />
+
         <Image
           src="https://links.papareact.com/c2c445"
           alt="Trello Logo"
@@ -42,6 +68,8 @@ function HeaderTop() {
               type="text"
               placeholder="Search"
               className="flex-1 outline-none p-2"
+              value={searchString}
+              onChange={(e) => setSearchString(e.target.value)}
             />
             <button type="submit" hidden>
               Search
@@ -52,8 +80,9 @@ function HeaderTop() {
           <Avatar name="Remi Daniel" round size="50" color="#0855D1" />
         </div>
       </div>
+      <Summary loading={loading} suggestion={suggestion} />
     </header>
   );
 }
 
-export default HeaderTop;
+export default Header;
