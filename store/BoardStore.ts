@@ -14,7 +14,7 @@ interface BoardState {
   deleteTask: (taskIndex: number, todoId: Todo, id: TypeColumn) => void;
 }
 
-const useBoardStore = create<BoardState>((set) => ({
+const useBoardStore = create<BoardState>((set,get) => ({
   board: {
     columns: new Map<TypeColumn, Column>(),
   },
@@ -28,7 +28,9 @@ const useBoardStore = create<BoardState>((set) => ({
   setBoardState: (board) => set({ board }),
 
   deleteTask: async (taskIndex: number, todo: Todo, id: TypeColumn) => {
-    
+    const newColumns = new Map(get().board.columns);
+
+    newColumns.get(id)?.todos.splice(taskIndex, 1);
   },
 
   updateTodoInDatabase: async (todo, columnId) => {
