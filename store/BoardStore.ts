@@ -30,6 +30,7 @@ const useBoardStore = create<BoardState>((set) => ({
   deleteTask: async (taskIndex: number, todo: Todo, id: TypeColumn) => {},
 
   updateTodoInDatabase: async (todo, columnId) => {
+    console.log(columnId);
     await databases.updateDocument(
       process.env.NEXT_PUBLIC_DATABASE_ID!,
       process.env.NEXT_PUBLIC_TODOS_COLLECTION_ID!,
