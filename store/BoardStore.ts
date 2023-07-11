@@ -27,7 +27,9 @@ const useBoardStore = create<BoardState>((set) => ({
 
   setBoardState: (board) => set({ board }),
 
-  deleteTask: async (taskIndex: number, todo: Todo, id: TypeColumn) => {},
+  deleteTask: async (taskIndex: number, todo: Todo, id: TypeColumn) => {
+    
+  },
 
   updateTodoInDatabase: async (todo, columnId) => {
     console.log(columnId);
