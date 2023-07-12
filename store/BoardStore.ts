@@ -1,5 +1,6 @@
-import { databases } from "@/appWrite";
+import { databases, storage } from "@/appWrite";
 import { getTodosGroupedByColumn } from "@/lib/getTodosByColumn";
+import { Storage } from "appwrite";
 import { create } from "zustand";
 
 interface BoardState {
@@ -14,7 +15,7 @@ interface BoardState {
   deleteTask: (taskIndex: number, todoId: Todo, id: TypeColumn) => void;
 }
 
-const useBoardStore = create<BoardState>((set,get) => ({
+const useBoardStore = create<BoardState>((set, get) => ({
   board: {
     columns: new Map<TypeColumn, Column>(),
   },
@@ -31,7 +32,15 @@ const useBoardStore = create<BoardState>((set,get) => ({
     const newColumns = new Map(get().board.columns);
 
     newColumns.get(id)?.todos.splice(taskIndex, 1);
-    set({board: {columns: newColumns}})
+    set({ board: { columns: newColumns } });
+    if (todo.image)
+      await storage.deleteFile(todo.image.bucketId, todo.image.fileId);
+
+    await databases.deleteDocument(
+      process.env.NEXT_PUBLIC_DATABASE_ID!,
+      process.env.NEXT_PUBLIC_TODOS_COLLECTION_ID!,
+      todo.$id
+    );
   },
 
   updateTodoInDatabase: async (todo, columnId) => {
