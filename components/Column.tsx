@@ -20,8 +20,9 @@ const idToColumnText: {
 
 const Column = ({ id, todos, index }: Props) => {
   const [searchString] = useBoardStore((state) => [state.searchString]);
-  const [isOpen, closeModal] = useModalStore((state) => [
+  const [isOpen, openModal, closeModal] = useModalStore((state) => [
     state.isOpen,
+    state.openModal,
     state.closeModal,
   ]);
   return (
@@ -85,7 +86,7 @@ const Column = ({ id, todos, index }: Props) => {
 
                   <div className="flex items-end justify-end p-2 ">
                     <button
-                      onClick={isOpen}
+                      onClick={openModal}
                       className="text-green-500 hover:text-green-600"
                     >
                       <PlusCircleIcon className="h-10 w-10" />
