@@ -22,7 +22,7 @@ function TodoCard({
   innerRef,
   draggableProps,
   dragHandleProps,
-  id
+  id,
 }: Props) {
   const [deleteTask] = useBoardStore((state) => [state.deleteTask]);
 
