@@ -35,9 +35,11 @@ function Modal() {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl  " >
+              <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all ">
+                <Dialog.Title as = "h3" className = "text-lg font-medium leading -6 text-gray-goul" >
 
-                
+
+                </Dialog.Title>
               </Dialog.Panel>
             </Transition.Child>
 
