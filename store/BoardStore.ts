@@ -5,14 +5,21 @@ import { create } from "zustand";
 
 interface BoardState {
   board: Board;
+  newTaskInput: string;
+  searchString: string;
+
+ 
   getBoard: () => void;
+  
   setBoardState: (board: Board) => void;
+ 
   updateTodoInDatabase: (todo: Todo, columnId: TypeColumn) => void;
 
-  searchString: string;
   setSearchString: (searchString: string) => void;
 
   deleteTask: (taskIndex: number, todoId: Todo, id: TypeColumn) => void;
+
+  setNewTaskInput: (input: string) => void;
 }
 
 const useBoardStore = create<BoardState>((set, get) => ({
@@ -20,6 +27,7 @@ const useBoardStore = create<BoardState>((set, get) => ({
     columns: new Map<TypeColumn, Column>(),
   },
   searchString: "",
+  newTaskInput: "",
   setSearchString: (searchString) => set({ searchString }),
   getBoard: async () => {
     const board = await getTodosGroupedByColumn();
@@ -43,6 +51,8 @@ const useBoardStore = create<BoardState>((set, get) => ({
     );
   },
 
+  setNewTaskInput: (input: string) => set({ newTaskInput: input }),
+
   updateTodoInDatabase: async (todo, columnId) => {
     console.log(columnId);
     await databases.updateDocument(
@@ -55,5 +65,3 @@ const useBoardStore = create<BoardState>((set, get) => ({
 }));
 
 export { useBoardStore };
-
-//databases.updateDocument('[DATABASE_ID]', '[COLLECTION_ID]', '[DOCUMENT_ID]');
