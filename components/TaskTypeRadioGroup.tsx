@@ -31,8 +31,8 @@ function TaskTypeRadioGroup() {
     state.setNewTaskInput,
   ]);
   return (
-    <div>
-      <div></div>
+    <div className="mx-auto w-full max-w-md">
+      <div className="mx-auto w-full max-w-md"></div>
     </div>
   );
 }
