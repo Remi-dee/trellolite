@@ -55,6 +55,8 @@ function Modal() {
                   placeholder="Enter a task here..."
                   className="w-full border border-gray-300 rounded-md outline-none p-5"
                 />
+
+                <TaskTypeRadioGroup />
               </Dialog.Panel>
             </Transition.Child>
 

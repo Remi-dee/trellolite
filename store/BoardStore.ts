@@ -6,6 +6,7 @@ import { create } from "zustand";
 interface BoardState {
   board: Board;
   newTaskInput: string;
+  newTaskType:TypeColumn;
   searchString: string;
 
  
@@ -20,6 +21,7 @@ interface BoardState {
   deleteTask: (taskIndex: number, todoId: Todo, id: TypeColumn) => void;
 
   setNewTaskInput: (input: string) => void;
+  setNewTaskType: (columnId: TypeColumn) => void;
 }
 
 const useBoardStore = create<BoardState>((set, get) => ({
@@ -28,6 +30,7 @@ const useBoardStore = create<BoardState>((set, get) => ({
   },
   searchString: "",
   newTaskInput: "",
+  newTaskType: "todo",
   setSearchString: (searchString) => set({ searchString }),
   getBoard: async () => {
     const board = await getTodosGroupedByColumn();
@@ -52,6 +55,7 @@ const useBoardStore = create<BoardState>((set, get) => ({
   },
 
   setNewTaskInput: (input: string) => set({ newTaskInput: input }),
+  setNewTaskType: (columnId: TypeColumn) => set({newTaskType: columnId});
 
   updateTodoInDatabase: async (todo, columnId) => {
     console.log(columnId);
