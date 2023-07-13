@@ -30,8 +30,11 @@ function TaskTypeRadioGroup() {
     state.newTaskInput,
     state.setNewTaskInput,
   ]);
-
-  return <div>TaskTypeRadioGroup</div>;
+  return (
+    <div>
+      <div></div>
+    </div>
+  );
 }
 
 export default TaskTypeRadioGroup;
