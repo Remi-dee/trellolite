@@ -43,8 +43,16 @@ function TaskTypeRadioGroup() {
                 value={type.id}
                 className={({ active, checked }) =>
                   `
-                  ${active ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300" : ""}
-                  ${checked ? `${type.color} bg-opacity-75 text-white` : "bg-white"}
+                  ${
+                    active
+                      ? "ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300"
+                      : ""
+                  }
+                  ${
+                    checked
+                      ? `${type.color} bg-opacity-75 text-white`
+                      : "bg-white"
+                  }
                   relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none
                   `
                 }
@@ -56,13 +64,17 @@ function TaskTypeRadioGroup() {
                         <div className="text-sm">
                           <RadioGroup.Label
                             as="p"
-                            className={`font-medium ${checked ? "text-white" : "text-gray-900"}`}
+                            className={`font-medium ${
+                              checked ? "text-white" : "text-gray-900"
+                            }`}
                           >
                             {type.name}
                           </RadioGroup.Label>
                           <RadioGroup.Description
                             as="span"
-                            className={`inline ${checked ? "text-white" : "text-gray-500"}`}
+                            className={`inline ${
+                              checked ? "text-white" : "text-gray-500"
+                            }`}
                           >
                             <span>{type.description}</span>
                           </RadioGroup.Description>
@@ -83,7 +95,6 @@ function TaskTypeRadioGroup() {
       </div>
     </div>
   );
-  ;
 }
 
 export default TaskTypeRadioGroup;
