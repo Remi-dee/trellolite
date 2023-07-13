@@ -6,14 +6,14 @@ import { create } from "zustand";
 interface BoardState {
   board: Board;
   newTaskInput: string;
-  newTaskType:TypeColumn;
+  newTaskType: TypeColumn;
   searchString: string;
+  image: File | null;
 
- 
   getBoard: () => void;
-  
+
   setBoardState: (board: Board) => void;
- 
+
   updateTodoInDatabase: (todo: Todo, columnId: TypeColumn) => void;
 
   setSearchString: (searchString: string) => void;
@@ -22,6 +22,7 @@ interface BoardState {
 
   setNewTaskInput: (input: string) => void;
   setNewTaskType: (columnId: TypeColumn) => void;
+  setImage: (image: File | null) => void;
 }
 
 const useBoardStore = create<BoardState>((set, get) => ({
@@ -31,6 +32,7 @@ const useBoardStore = create<BoardState>((set, get) => ({
   searchString: "",
   newTaskInput: "",
   newTaskType: "todo",
+  image: null,
   setSearchString: (searchString) => set({ searchString }),
   getBoard: async () => {
     const board = await getTodosGroupedByColumn();
@@ -55,7 +57,8 @@ const useBoardStore = create<BoardState>((set, get) => ({
   },
 
   setNewTaskInput: (input: string) => set({ newTaskInput: input }),
-  setNewTaskType: (columnId: TypeColumn) => set({newTaskType: columnId});
+  setNewTaskType: (columnId: TypeColumn) => set({ newTaskType: columnId }),
+  setImage: (image: File | null) => set({ image }),
 
   updateTodoInDatabase: async (todo, columnId) => {
     console.log(columnId);

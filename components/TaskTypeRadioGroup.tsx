@@ -20,8 +20,8 @@ const types = [
   },
 
   {
-    id: "todo",
-    name: "Todo",
+    id: "done",
+    name: "Done",
     description: "Todo",
     color: "bg-green-500",
   },
