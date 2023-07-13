@@ -35,6 +35,8 @@ function TaskTypeRadioGroup() {
     <div className="w-full py-5">
       <div className="mx-auto w-full max-w-md">
         <RadioGroup value={newTaskType} onChange={(e) => setNewTaskType(e)}>
+        
+        <div className="space-y-2"></div>
           <RadioGroup.Label>Plan</RadioGroup.Label>
           <RadioGroup.Option value="startup">
             {({ checked }) => (
