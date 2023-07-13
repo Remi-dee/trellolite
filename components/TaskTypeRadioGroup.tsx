@@ -2,6 +2,7 @@
 
 import { useBoardStore } from "@/store/BoardStore";
 import { RadioGroup } from "@headlessui/react";
+import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 const types = [
   {
@@ -34,34 +35,7 @@ function TaskTypeRadioGroup() {
   return (
     <div className="w-full py-5">
       <div className="mx-auto w-full max-w-md">
-        <RadioGroup value={newTaskType} onChange={(e) => setNewTaskType(e)}>
-        
-        <div className="space-y-2">
-        <RadioGroup.Option value="startup">
-            {({ checked }) => (
-              <span className={checked ? "bg-blue-200" : ""}>Startup</span>
-            )}
-          </RadioGroup.Option>
-
-
-        </div>
-          <RadioGroup.Label>Plan</RadioGroup.Label>
-          <RadioGroup.Option value="startup">
-            {({ checked }) => (
-              <span className={checked ? "bg-blue-200" : ""}>Startup</span>
-            )}
-          </RadioGroup.Option>
-          <RadioGroup.Option value="business">
-            {({ checked }) => (
-              <span className={checked ? "bg-blue-200" : ""}>Business</span>
-            )}
-          </RadioGroup.Option>
-          <RadioGroup.Option value="enterprise">
-            {({ checked }) => (
-              <span className={checked ? "bg-blue-200" : ""}>Enterprise</span>
-            )}
-          </RadioGroup.Option>
-        </RadioGroup>
+       
       </div>
     </div>
   );
