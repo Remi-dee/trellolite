@@ -36,7 +36,15 @@ function TaskTypeRadioGroup() {
       <div className="mx-auto w-full max-w-md">
         <RadioGroup value={newTaskType} onChange={(e) => setNewTaskType(e)}>
         
-        <div className="space-y-2"></div>
+        <div className="space-y-2">
+        <RadioGroup.Option value="startup">
+            {({ checked }) => (
+              <span className={checked ? "bg-blue-200" : ""}>Startup</span>
+            )}
+          </RadioGroup.Option>
+
+
+        </div>
           <RadioGroup.Label>Plan</RadioGroup.Label>
           <RadioGroup.Option value="startup">
             {({ checked }) => (
