@@ -1,15 +1,14 @@
-import { storage } from "@/appWrite";
-import { Storage } from "appwrite";
+import { ID, storage } from "@/appWrite";
 
+const uploadImage = async (file: File) => {
+  if (!file) return;
 
+  const fileUploaded = await storage.createFile(
+    process.env.NEXT_PUBLIC_BUCKET_ID!,
+    ID.unique(),
+    file
+  );
+  return fileUploaded;
+};
 
-const uploadImage =async (file : File ) => {
-if(!file) return;
-
-const fileUploaded = await storage.createFile(
-
-
-
-)
-
-}
+export default uploadImage;
