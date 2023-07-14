@@ -1,5 +1,6 @@
 import { ID, databases, storage } from "@/appWrite";
 import { getTodosGroupedByColumn } from "@/lib/getTodosByColumn";
+import uploadImage from "@/lib/uploadImage";
 
 import { create } from "zustand";
 
@@ -74,11 +75,11 @@ const useBoardStore = create<BoardState>((set, get) => ({
     let file: Image | undefined;
 
     if (image) {
-      const fileUpload = await uploadImage(image);
-      if (fileUpload) {
+      const fileUploaded = await uploadImage(image);
+      if (fileUploaded) {
         file = {
           bucketId: fileUploaded.bucketId,
-          field: fileUploaded.$id,
+          fileId: fileUploaded.$id,
         };
       }
     }
@@ -95,37 +96,8 @@ const useBoardStore = create<BoardState>((set, get) => ({
       }
     );
 
-    set({newTaskInput: ""});
-
-    set((state) => {
-      const newColumns = new Map(state.board.columns)
-
-const newTodo : Todo= {
-  $id,
-  $createdAt: new Date().toISOString(),
-  title: todo,
-  status:columnId,
-  // include image if it exists
-  ...(file && {image: file})
-}
-
-const column = newColumns.get(columnId)
-
-if (!column) {
-  newColumns.set(columnId, {
-    id: columnId,
-    todos:[newTodo],
-  })
-} else {
-newColumns.get(columnId)?.todos.push(newTodo)
-
-}
-
-return {
-board: {column: newColumns}
-
-}
-  }),
+    set({ newTaskInput: "" });
+  },
 }));
 
 export { useBoardStore };
