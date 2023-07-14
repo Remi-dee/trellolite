@@ -98,6 +98,35 @@ const useBoardStore = create<BoardState>((set, get) => ({
 
     set({ newTaskInput: "" });
 
+    set((state) => {
+      const newColumns = new Map(state.board.columns);
+  
+      const newTodo: Todo = {
+          $id: ID.unique(),
+          $createdAt: new Date().toISOString(),
+          title: todo,
+          status: columnId,
+          ...(file && { image: file }),
+      };
+  
+      const column = newColumns.get(columnId);
+  
+      if (!column) {
+          newColumns.set(columnId, {
+              id: columnId,
+              todos: [newTodo],
+          });
+      } else {
+          column.todos.push(newTodo);
+      }
+  
+      return {
+          board: {
+              columns: newColumns,
+          },
+      };
+  });
+  
 
 
     
