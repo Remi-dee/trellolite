@@ -106,7 +106,24 @@ const newTodo : Todo= {
   title: todo,
   status:columnId,
   // include image if it exists
-  
+  ...(file && {image: file})
+}
+
+const column = newColumns.get(columnId)
+
+if (!column) {
+  newColumns.set(columnId, {
+    id: columnId,
+    todos:[newTodo],
+  })
+} else {
+newColumns.get(columnId)?.todos.push(newTodo)
+
+}
+
+return {
+board: {column: newColumns}
+
 }
   }),
 }));
