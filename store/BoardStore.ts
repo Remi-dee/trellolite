@@ -97,6 +97,10 @@ const useBoardStore = create<BoardState>((set, get) => ({
     );
 
     set({ newTaskInput: "" });
+
+
+
+    
   },
 }));
 
