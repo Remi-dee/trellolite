@@ -117,7 +117,7 @@ const useBoardStore = create<BoardState>((set, get) => ({
           todos: [newTodo],
         });
       } else {
-        column.todos.push(newTodo);
+        newColumns.get(columnId)?.todos.push(newTodo);
       }
 
       return {
