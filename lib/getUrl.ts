@@ -1,3 +1,7 @@
-const getUrl = async (image: Image) =>{
-    
-}
+import { storage } from "@/appWrite";
+
+const getUrl = async (image: Image) => {
+  const url = storage.getFilePreview(image.bucketId, image.fileId);
+
+  return url;
+};
