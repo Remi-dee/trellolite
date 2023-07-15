@@ -5,3 +5,5 @@ const getUrl = async (image: Image) => {
 
   return url;
 };
+
+export default getUrl
