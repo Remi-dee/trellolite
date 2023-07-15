@@ -1,5 +1,5 @@
 "use client";
-import { useState, Fragment, useRef } from "react";
+import { useState, Fragment, useRef, FormEvent } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { useModalStore } from "@/store/ModalStore";
 import { useBoardStore } from "@/store/BoardStore";
@@ -9,7 +9,7 @@ import { PhotoIcon } from "@heroicons/react/24/solid";
 
 function Modal() {
   const imagePickerRef = useRef<HTMLInputElement>(null);
-  const [addTask, newTaskType, setImage, image, newTaskInput, setNewTaskInput] =
+  const [newTaskType, addTask, image, setImage, newTaskInput, setNewTaskInput] =
     useBoardStore((state) => [
       state.newTaskType,
       state.addTask,
@@ -25,7 +25,7 @@ function Modal() {
   ]);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefaut();
+    e.preventDefault();
     if (!newTaskInput) return;
 
     addTask(newTaskInput, newTaskType, image);
@@ -127,7 +127,6 @@ function Modal() {
                     className="inline-flex justify-center rounded border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2
                   focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:bg-gray-100 disabled:text-gray-300 disabled:cursor-not-allowed"
                   >
-                    {" "}
                     Add Task
                   </button>
                 </div>
