@@ -14,7 +14,7 @@ type Props = {
   todo: Todo;
   index: number;
   id: TypeColumn;
-  innerRef: { element: HTMLElement | LegacyRef<HTMLDivElement> | null };
+  innerRef: { element: HTMLElement | null };
   draggableProps: DraggableProvidedDraggableProps;
   dragHandleProps: DraggableProvidedDragHandleProps | null | undefined;
 };
