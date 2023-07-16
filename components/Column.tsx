@@ -80,6 +80,7 @@ const Column = ({ id, todos, index }: Props) => {
                             id={id}
                             draggableProps={provided.draggableProps}
                             dragHandleProps={provided.dragHandleProps}
+                           // @ts-ignore
                             innerRef={provided.innerRef}
                           />
                         )}
