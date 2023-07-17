@@ -95,7 +95,7 @@ const Column = ({ id, todos, index }: Props) => {
                   >
                     <div className="flex justify-between p-2 ">
                       <PlusCircleIcon className="w-10" />
-                      <p className="text-l">Add a card</p>
+                      <p className="text-xs">Add a card</p>
                     </div>
                   </button>
                 </div>
