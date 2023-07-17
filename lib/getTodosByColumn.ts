@@ -28,7 +28,7 @@ async function getTodosGroupedByColumn() {
 
     return acc;
   }, new Map<TypeColumn, Column>());
-  console.log(columns);
+  
   // if columns doesnt have in progress, todo and done, add them with empty todos
   const columnTypes: TypeColumn[] = ["todo", "inprogress", "done"];
 
@@ -38,7 +38,7 @@ async function getTodosGroupedByColumn() {
     }
   }
 
-  console.log(columns);
+
 
   //sort columns by columnTypes
   const sortedColumns = new Map(
