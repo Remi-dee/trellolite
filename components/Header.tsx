@@ -45,7 +45,7 @@ function Header() {
                        
                         blur-3xl
                         opacity-70
-                        -z-80
+                        -z-20
 
                         "
         />
