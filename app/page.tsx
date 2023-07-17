@@ -8,7 +8,10 @@ export default function Home() {
   return (
     <main className="bg-[url('../public/assets/wood.jpg')]">
       {/*Header */}
+<section>
 
+  
+</section>
       <HeaderTop />
 
       {/*Header */}
