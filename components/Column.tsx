@@ -89,16 +89,16 @@ const Column = ({ id, todos, index }: Props) => {
                   })}
                   {provided.placeholder}
 
-                  
-                    <button
-                      onClick={handleAddTodo}
-                      className="flex justify-between text-green-500 hover:text-green-600"
-                    >
-                     <div className="p-2 "></div>
+                  <button
+                    onClick={handleAddTodo}
+                    className="flex justify-between text-green-500 hover:text-green-600"
+                  >
+                    <div className="p-2 ">
+                      {" "}
                       <PlusCircleIcon />
                       <p>Add a card</p>
-                    </button>
-                 
+                    </div>
+                  </button>
                 </div>
               </div>
             )}
