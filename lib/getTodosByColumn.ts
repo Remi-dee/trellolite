@@ -1,6 +1,5 @@
 import { databases } from "@/appWrite";
 
-
 async function getTodosGroupedByColumn() {
   const data = await databases.listDocuments(
     process.env.NEXT_PUBLIC_DATABASE_ID!,
@@ -28,7 +27,7 @@ async function getTodosGroupedByColumn() {
 
     return acc;
   }, new Map<TypeColumn, Column>());
-  
+
   // if columns doesnt have in progress, todo and done, add them with empty todos
   const columnTypes: TypeColumn[] = ["todo", "inprogress", "done"];
 
@@ -38,15 +37,13 @@ async function getTodosGroupedByColumn() {
     }
   }
 
-
-
   //sort columns by columnTypes
   const sortedColumns = new Map(
     Array.from(columns.entries()).sort(
       (a, b) => columnTypes.indexOf(a[0]) - columnTypes.indexOf(b[0])
     )
   );
-  console.log(sortedColumns);
+
   const board: Board = {
     columns: sortedColumns,
   };
