@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { MagnifyingGlassIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import Avatar from "react-avatar";
 import { useBoardStore } from "@/store/BoardStore";
+import trello from "@/public/assets/Trello_logo_PNG1.png"
 
 import Summary from "./Summary";
 import { fetchSuggestion } from "@/lib/gptService";
@@ -52,7 +53,7 @@ function Header() {
         />
 
         <Image
-          src="https://links.papareact.com/c2c445"
+          src = {trello}
           alt="Trello Logo"
           width={300}
           height={100}
