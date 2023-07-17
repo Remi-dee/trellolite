@@ -12,6 +12,8 @@ export default function Home() {
       <HeaderTop />
 
       {/*Header */}
+     
+     <div></div>
       <Board />
       <h1>Trellolite Ai, brought to you by Remi Daniel</h1>
     </main>
