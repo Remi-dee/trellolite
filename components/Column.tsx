@@ -95,7 +95,7 @@ const Column = ({ id, todos, index }: Props) => {
                   >
                     <div className="flex p-2 ">
                     
-                      <PlusCircleIcon cl />
+                      <PlusCircleIcon className="w-5" />
                       <span>Add a card</span>
                     </div>
                   </button>
