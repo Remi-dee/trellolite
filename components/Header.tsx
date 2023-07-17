@@ -43,7 +43,7 @@ function Header() {
                         bg-header
                         rounded-md
                        
-                        blur-3xl
+                        blur-4xl
                         opacity-80
                         -z-50
 
