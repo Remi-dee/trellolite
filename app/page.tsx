@@ -10,14 +10,14 @@ export default function Home() {
       {/*Header */}
 <section className="bg-[url('../public/assets/wood.jpg')]">
 
-
+<Board />
 </section>
       <HeaderTop />
 
       {/*Header */}
 
       
-        <Board />
+        
     
 
       <h1>Trellolite Ai, brought to you by Remi Daniel</h1>
