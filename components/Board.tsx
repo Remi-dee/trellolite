@@ -30,10 +30,9 @@ function Board() {
         const entries = Array.from(board.columns.entries());
         const [removed] = entries.splice(source.index, 1);
         entries.splice(destination.index, 0, removed);
-       
-        console.log(entries.splice(destination.index, 0, removed));
+
         const rearrangedColumns = new Map(entries);
-        console.log(rearrangedColumns);
+
         setBoardState({
           ...board,
           columns: rearrangedColumns,
