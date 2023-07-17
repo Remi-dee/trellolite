@@ -16,7 +16,7 @@ module.exports = {
       colors: {
         primary: "#0055D1",
         board: "#F1F2F4",
-        
+        header: "#E0CBC2"
       },
     },
   },
