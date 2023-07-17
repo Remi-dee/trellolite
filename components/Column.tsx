@@ -95,7 +95,7 @@ const Column = ({ id, todos, index }: Props) => {
                   >
                     <div className="flex  items-center p-2 ">
                       <PlusCircleIcon className="w-10" />
-                      <p className="text-xl">Add a card</p>
+                      <p className="text-xl py-2">Add a card</p>
                     </div>
                   </button>
                 </div>
