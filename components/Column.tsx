@@ -94,10 +94,8 @@ const Column = ({ id, todos, index }: Props) => {
                       onClick={handleAddTodo}
                       className="flex justify-between text-green-500 hover:text-green-600"
                     >
-                      
-                        <PlusCircleIcon />
-                        <p>Add a card</p>
-                      
+                      <PlusCircleIcon />
+                      <p>Add a card</p>
                     </button>
                   </div>
                 </div>
