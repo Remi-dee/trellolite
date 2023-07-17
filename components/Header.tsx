@@ -42,7 +42,7 @@ function Header() {
                         h-96
                         bg-header
                         rounded-md
-                        filter
+                       
                         blur-3xl
                         opacity-80
                         -z-50
