@@ -91,7 +91,7 @@ const Column = ({ id, todos, index }: Props) => {
 
                   <button
                     onClick={handleAddTodo}
-                    className="flex justify-between text-green-500 hover:text-green-600"
+                    className="text-green-500 hover:text-green-600"
                   >
                     <div className="flex justify-between p-2 ">
                     
