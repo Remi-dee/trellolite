@@ -14,7 +14,6 @@ export default function Home() {
       {/*Header */}
 
       <div className="bg-[url('../public/assets/wood.jpg')]">
-       
         <Board />
       </div>
 
