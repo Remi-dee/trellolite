@@ -10,10 +10,9 @@ export default function Home() {
       {/*Header */}
       <HeaderTop />
       <section className="bg-[url('../public/assets/wood.jpg')]">
-        <Board />
+        <Board /> 
+        <h1>Trellolite Ai, brought to you by Remi Daniel</h1>
       </section>
-      {/*Header */}
-      <h1>Trellolite Ai, brought to you by Remi Daniel</h1>
     </main>
   );
 }
