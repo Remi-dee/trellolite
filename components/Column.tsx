@@ -91,7 +91,7 @@ const Column = ({ id, todos, index }: Props) => {
 
                   <button
                     onClick={handleAddTodo}
-                    className="w-full text-green-500 hover:text-green-600"
+                    className="w-full text-gray-400 hover:text-green-600"
                   >
                     <div className="flex  items-center p-2 ">
                       <PlusCircleIcon className="w-10" />
