@@ -89,7 +89,7 @@ const Column = ({ id, todos, index }: Props) => {
                   })}
                   {provided.placeholder}
 
-                  <div className=" p-2 ">
+                  <div className="p-2 ">
                     <button
                       onClick={handleAddTodo}
                       className="flex justify-between text-green-500 hover:text-green-600"
