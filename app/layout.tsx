@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[url('../public/assets/wood.jpg')]">
+      <body className="bg-[url('../public/assets/wood.jpg')] bg-contain">
         {" "}
         <Modal />
         {children}
