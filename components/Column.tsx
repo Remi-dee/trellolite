@@ -89,10 +89,10 @@ const Column = ({ id, todos, index }: Props) => {
                   })}
                   {provided.placeholder}
 
-                  <div className="flex items-end justify-end p-2 ">
+                  <div className=" p-2 ">
                     <button
                       onClick={handleAddTodo}
-                      className="flex justify-text-green-500 hover:text-green-600"
+                      className="flex justify-between text-green-500 hover:text-green-600"
                     >
                       
                         <PlusCircleIcon />
