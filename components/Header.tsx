@@ -44,7 +44,7 @@ function Header() {
                         rounded-md
                        
                         blur-3xl
-                        opacity-50
+                        opacity-70
                         -z-50
 
                         "
