@@ -13,7 +13,7 @@ export default function Home() {
 
       {/*Header */}
       <Board />
-      <h1>Trellolite Ai</h1>
+      <h1>Trellolite Ai, brought to you by Rem </h1>
     </main>
   );
 }
