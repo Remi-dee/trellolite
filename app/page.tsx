@@ -14,7 +14,7 @@ export default function Home() {
       {/*Header */}
      
      <div  className="bg-[url('../public/assets/wood.jpg')]"  ></div>
-      <Board />
+     
       <h1>Trellolite Ai, brought to you by Remi Daniel</h1>
     </main>
   );
