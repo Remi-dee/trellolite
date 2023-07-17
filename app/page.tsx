@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="bg-[url('/img/hero-pattern.svg')]">
       {/*Header */}
 
       <HeaderTop />
