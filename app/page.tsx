@@ -13,7 +13,7 @@ export default function Home() {
 
       {/*Header */}
       <Board />
-      <h1>Trello 2.0 Ai</h1>
+      <h1>Trellolite Ai</h1>
     </main>
   );
 }
