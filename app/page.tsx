@@ -11,7 +11,7 @@ export default function Home() {
       <HeaderTop />
     
         <Board /> 
-        <h1>Trellolite Ai, brought to you by Remi Daniel</h1>
+        <h1 className="">Trellolite Ai, brought to you by Remi Daniel</h1>
      
     </main>
   );
