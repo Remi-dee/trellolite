@@ -40,7 +40,9 @@ function Header() {
                         left-0
                         w-full
                         h-96
-                        E0CBC2
+                        bg-gradient-to-r
+                        from-pink-400
+                        to-primary
                         rounded-md
                         filter
                         blur-3xl
