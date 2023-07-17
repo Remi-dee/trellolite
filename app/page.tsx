@@ -6,20 +6,13 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main >
+    <main>
       {/*Header */}
-<section className="bg-[url('../public/assets/wood.jpg')]">
-
-<Board />
-</section>
       <HeaderTop />
-
+      <section className="bg-[url('../public/assets/wood.jpg')]">
+        <Board />
+      </section>
       {/*Header */}
-
-      
-        
-    
-
       <h1>Trellolite Ai, brought to you by Remi Daniel</h1>
     </main>
   );
