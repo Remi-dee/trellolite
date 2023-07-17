@@ -96,7 +96,7 @@ function Board() {
       <Droppable droppableId="board" direction="horizontal" type="column">
         {(provided) => (
           <div
-            className="bg-[url('../public/assets/wood.jpg')] grid grid-cols-1 md:grid-cols-3 gap-5 px-3 max-w-7xl mx-auto"
+            className=" grid grid-cols-1 md:grid-cols-3 gap-5 px-3 max-w-7xl mx-auto"
             {...provided.droppableProps}
             ref={provided.innerRef}
           >
