@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-[url('public/')]">
+    <main className="bg-[url('public/assets/')]">
       {/*Header */}
 
       <HeaderTop />
