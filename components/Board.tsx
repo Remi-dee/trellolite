@@ -17,7 +17,6 @@ function Board() {
   useEffect(() => {
     getBoard();
   }, [getBoard]);
-  console.log(board);
 
   const handleDnDragEnd = (result: DropResult) => {
     const { destination, source, type } = result;
