@@ -7,7 +7,7 @@ import { CheckCircleIcon } from "@heroicons/react/24/solid";
 const types = [
   {
     id: "todo",
-    name: "Todo",
+    name:"Backlog",
     description: "A newtask to be completed",
     color: "bg-red-500",
   },
@@ -22,7 +22,7 @@ const types = [
   {
     id: "done",
     name: "Done",
-    description: "Todo",
+    description: "Task completed successfully",
     color: "bg-green-500",
   },
 ];

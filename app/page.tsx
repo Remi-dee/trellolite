@@ -8,12 +8,11 @@ export default function Home() {
   return (
     <main>
       {/*Header */}
-
       <HeaderTop />
-
-      {/*Header */}
-      <Board />
-      <h1>Trello 2.0 Ai</h1>
+    
+        <Board /> 
+        <h1 className="absolute bottom-3 right-0 mx-11 text-white ">Trellolite Ai, brought to you by &copy; Remi Daniel</h1>
+     
     </main>
   );
 }
