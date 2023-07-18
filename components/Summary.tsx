@@ -16,7 +16,7 @@ function Summary({ loading, suggestion }: Props) {
         />
         {suggestion && !loading
           ? suggestion
-          : "GPT Sumary..."}
+          : "GPT Summary ..."}
       </p>
     </div>
   );
