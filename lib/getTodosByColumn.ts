@@ -22,7 +22,7 @@ async function getTodosGroupedByColumn() {
       $createdAt: todo.$createdAt,
       title: todo.title,
       status: todo.status,
-      //   ...(todo.image && { Image: JSON.parse(todo.image) }),
+      ...(todo.image && { Image: JSON.parse(todo.image) }),
     });
 
     return acc;
