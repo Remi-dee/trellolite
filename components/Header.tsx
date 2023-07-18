@@ -40,14 +40,12 @@ function Header() {
                         left-0
                         w-full
                         h-96
-                        bg-gradient-to-r
-                        from-pink-400
-                        to-primary
+                        bg-header
                         rounded-md
-                        filter
+                       
                         blur-3xl
                         opacity-50
-                        -z-50
+                        -z-10
 
                         "
         />

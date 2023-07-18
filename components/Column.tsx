@@ -13,7 +13,7 @@ type Props = {
 const idToColumnText: {
   [key in TypeColumn]: string;
 } = {
-  todo: "To Do",
+  todo: "Backlog",
   inprogress: "In progress",
   done: "Done",
 };
@@ -43,7 +43,7 @@ const Column = ({ id, todos, index }: Props) => {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
                 className={`p-2 rounded-2xl shadow-sm   ${
-                  snapshot.isDraggingOver ? "bg-green-200" : "bg-white/50"
+                  snapshot.isDraggingOver ? "bg-green-200" : "bg-board"
                 }`}
               >
                 <h2 className="flex justify-between font-bold text-xl p-2">
@@ -80,7 +80,7 @@ const Column = ({ id, todos, index }: Props) => {
                             id={id}
                             draggableProps={provided.draggableProps}
                             dragHandleProps={provided.dragHandleProps}
-                           // @ts-ignore
+                            // @ts-ignore
                             innerRef={provided.innerRef}
                           />
                         )}
@@ -89,14 +89,15 @@ const Column = ({ id, todos, index }: Props) => {
                   })}
                   {provided.placeholder}
 
-                  <div className="flex items-end justify-end p-2 ">
-                    <button
-                      onClick={handleAddTodo}
-                      className="text-green-500 hover:text-green-600"
-                    >
-                      <PlusCircleIcon className="h-10 w-10" />
-                    </button>
-                  </div>
+                  <button
+                    onClick={handleAddTodo}
+                    className="w-full text-gray-500 hover:text-green-600"
+                  >
+                    <div className="flex  items-center p-2 ">
+                      <PlusCircleIcon className="bg-transparent w-10" />
+                      <p className="text-xl px-3">Add a card</p>
+                    </div>
+                  </button>
                 </div>
               </div>
             )}
