@@ -22,7 +22,7 @@ const types = [
   {
     id: "done",
     name: "Done",
-    description: "Task completed",
+    description: "Task completed successfully",
     color: "bg-green-500",
   },
 ];
