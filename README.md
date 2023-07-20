@@ -3,24 +3,23 @@ Trellolite is a lightweight Trello clone that allows users to set tasks and orga
 
 Features
 
-- [ ]Task Management
-Create new tasks
-Update existing tasks
-Delete tasks
- Drag and drop tasks to reorder them within columns
-Column Management
- Create new columns
- Update existing columns
- Delete columns
- Drag and drop columns to reorder them on the board
-Task Summary with OpenAI GPT
- Generate task summaries for todos in backlog, in progress, and done columns
- Utilize OpenAI GPT to generate human-like and accurate task summaries
-User Authentication
- User registration and login
- Secure authentication with Appwrite
- Avatar support for user profiles
-Getting Started
+- [x] Task Management
+- [x] Create new tasks
+- [x] Update existing tasks
+- [x] Delete tasks
+- [x] Drag and drop tasks to reorder them within columns
+- [x] Column Management
+- [x] Drag and drop columns to reorder them on the board
+- [x] Task Summary with OpenAI GPT
+- [x] Avatar support for user profiles
+- [ ] Create new columns
+- [ ] Update existing columns
+- [ ] Delete columns
+- [ ] Generate task summaries for todos in backlog, in progress, and done columns
+
+
+ # Getting Started
+ 
 To run the Trellolite application locally, follow these steps:
 
 Clone the repository to your local machine.
