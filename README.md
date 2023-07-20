@@ -20,18 +20,18 @@ Trellolite is a lightweight Trello clone that allows users to set tasks and orga
 - [ ] Generate task summaries for todos in backlog, in progress, and done columns
 
 
- # Getting Started
+# Getting Started
 
-## Organise Tasks by dragging
+### Organise Tasks by dragging
 
 ![Trello drag2](https://github.com/Remi-dee/trellolite/assets/96704300/a21c5fdf-f00d-4fe3-b169-133f6a3108b6)
 
 
-## Add a Task
+### Add a Task
 ![Trello add a task2](https://github.com/Remi-dee/trellolite/assets/96704300/1799c579-fae7-4110-85ec-8e4152b26637)
 
 
-## Filter Tasks
+### Filter Tasks
 ![Trello search](https://github.com/Remi-dee/trellolite/assets/96704300/07777b72-eadb-4035-9786-c2988e763571)
 
 
@@ -80,11 +80,11 @@ The Trellolite app is built using the following technologies:
 
 - The combination of Next.js, TypeScript, Tailwind CSS, Appwrite, React Beautiful DND, Hero Icon, Avatar, and OpenAI GPT offers a robust and efficient tech stack for building a Trello-like task management application like Trellolite.
 
-- Folder Structure
+# Folder Structure
 The Trellolite repository follows a specific folder structure to organize the codebase effectively:
 
+/app: Contains the Next.js pages that define the different routes and views of the application.
 /components: Contains reusable React components used throughout the application.
-/pages: Contains the Next.js pages that define the different routes and views of the application.
 /public: Contains static assets, such as images and fonts, that are served by Next.js.
 /styles: Contains global styles and Tailwind CSS configuration.
 /lib: Contains utility functions and API clients.
