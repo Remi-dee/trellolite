@@ -1,8 +1,8 @@
 # Trellolite App
 Trellolite is a lightweight Trello clone that allows users to set tasks and organize them in columns with draggable features. The app is built using Next.js, TypeScript, Tailwind CSS, Appwrite, React Beautiful DND, Hero Icon, Avatar, and OpenAI GPT for task summary generation. It provides a simple and efficient user interface for task management and organization, making it easy for users to stay productive and on top of their tasks.
 
-Features
-
+# Features
+## MVP
 - [x] Task Management
 - [x] Create new tasks
 - [x] Update existing tasks
@@ -12,6 +12,8 @@ Features
 - [x] Drag and drop columns to reorder them on the board
 - [x] Task Summary with OpenAI GPT
 - [x] Avatar support for user profiles
+
+## POST MVP
 - [ ] Create new columns
 - [ ] Update existing columns
 - [ ] Delete columns
