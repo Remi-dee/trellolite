@@ -1,5 +1,5 @@
 # Trellolite App
-Trellolite is a lightweight Trello clone that allows users to set tasks and organize them in columns with draggable features. The app is built using Next.js, TypeScript, Tailwind CSS, Appwrite, React Beautiful DND, Hero Icon, Avatar, and OpenAI GPT for task summary generation. It provides a simple and efficient user interface for task management and organization, making it easy for users to stay productive and on top of their tasks.
+Trellolite is a lightweight Trello clone that allows users to set tasks and organize them in columns with draggable features. The app is built using Next.js, TypeScript, Tailwind CSS, Appwrite, Zustand for task state management, React Beautiful DND, Hero Icon, Avatar, and OpenAI GPT for task summary generation. It provides a simple and efficient user interface for task management and organization, making it easy for users to stay productive and on top of their tasks.
 
 # Features
 ## MVP
@@ -12,6 +12,9 @@ Trellolite is a lightweight Trello clone that allows users to set tasks and orga
 - [x] Drag and drop columns to reorder them on the board
 - [x] Task Summary with OpenAI GPT
 - [x] Avatar support for user profiles
+- [x]  Use Zustand to manage the application's state
+- [x] Simplify state management with Zustand's lightweight API
+- [x] Improve performance and scalability with Zustand's efficient updates
 
 ## POST MVP
 - [ ] Create new columns
@@ -70,6 +73,8 @@ The Trellolite app is built using the following technologies:
 
 - Appwrite: Appwrite is an open-source backend server that simplifies the development of web and mobile applications. It provides authentication, database storage, file storage, and other backend functionalities.
 
+- Zustand: Zustand is a lightweight state management library for React applications. It simplifies state management with a minimal API and efficient updates, improving the app's performance and scalability.
+
 - React Beautiful DND: React Beautiful DND is a popular library for adding drag-and-drop capabilities to React applications. It allows users to drag and drop tasks and columns to rearrange them on the board.
 
 - Hero Icon: Hero Icon is a set of free SVG icons designed by Steve Schoger. It provides a comprehensive collection of icons that can be easily customized and used in web projects.
@@ -88,7 +93,7 @@ The Trellolite repository follows a specific folder structure to organize the co
 /public: Contains static assets, such as images and fonts, that are served by Next.js.
 /styles: Contains global styles and Tailwind CSS configuration.
 /lib: Contains utility functions and API clients.
-/constants: Contains constant values and configurations used throughout the application.
+/store: Contains helper files that store the app state with zustand global store.
 
 # API Integration
 The Trellolite app integrates with the Appwrite backend for user authentication and task management. Appwrite provides the necessary API endpoints for user registration, login, and task data storage.
